@@ -25,7 +25,7 @@ final class EmailVerifierServiceProvider extends ServiceProvider
         $this->app->bind(DnsResolver::class, PhpDnsResolver::class);
         $this->app->bind(DisposableDomainChecker::class, FileBackedDisposableDomainChecker::class);
 
-        $this->app->singleton(fn (Application $app): ExternalEmailVerifierManager => new ExternalEmailVerifierManager($app));
+        $this->app->singleton(ExternalEmailVerifierManager::class, fn (Application $app): ExternalEmailVerifierManager => new ExternalEmailVerifierManager($app));
 
         $this->app->singleton(EmailVerifier::class);
         $this->app->singleton(EmailVerifierContract::class, EmailVerifier::class);

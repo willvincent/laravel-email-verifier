@@ -4,6 +4,7 @@
 [![Coverage](https://img.shields.io/badge/coverage-98.8%25-brightgreen)](.)
 [![Type Coverage](https://img.shields.io/badge/type--coverage-100%25-brightgreen)](.)
 [![PHPStan](https://img.shields.io/badge/phpstan-level%209-brightgreen)](.)
+[![GitHub Actions](https://github.com/willvincent/laravel-email-verifier/actions/workflows/tests.yml/badge.svg)](https://github.com/willvincent/laravel-email-verifier/actions/workflows/tests.yml)
 
 A comprehensive email verification package for Laravel 11/12 that validates email addresses through multiple layers of checks including format validation, domain sanity, MX records, disposable domain detection, and optional integration with external email verification providers.
 
