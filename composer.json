@@ -1,0 +1,78 @@
+{
+  "name": "willvincent/laravel-email-verifier",
+  "description": "Email sanity checks + MX + disposable detection + optional external verification for Laravel 11/12.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "email",
+    "validation",
+    "verification",
+    "email-validation",
+    "email-verification",
+    "disposable-email",
+    "mx-records",
+    "dns-validation",
+    "spam-prevention",
+    "kickbox",
+    "zerobounce",
+    "neverbounce",
+    "bouncer",
+    "emailable",
+    "temporary-email",
+    "fake-email",
+    "email-quality",
+    "deliverability"
+  ],
+  "require": {
+    "php": "^8.2|^8.3",
+    "illuminate/support": "^11.0|^12.0",
+    "illuminate/http": "^11.0|^12.0",
+    "illuminate/contracts": "^11.0|^12.0"
+  },
+  "require-dev": {
+    "mockery/mockery": "^1.6",
+    "orchestra/testbench": "^9.0|^10.0",
+    "pestphp/pest": "^3.0",
+    "pestphp/pest-plugin-laravel": "^3.0",
+    "rector/rector": "^2.2",
+    "driftingly/rector-laravel": "^2.1",
+    "larastan/larastan": "^3.8",
+    "pestphp/pest-plugin-type-coverage": "^3.6",
+    "laravel/pint": "^1.26"
+  },
+  "scripts": {
+    "phpstan": "vendor/bin/phpstan analyze",
+    "pint-test": "vendor/bin/pint --test",
+    "test": "vendor/bin/pest",
+    "test-coverage": "XDEBUG_MODE=coverage vendor/bin/pest --parallel --coverage --coverage-clover=coverage.xml --log-junit=junit.xml",
+    "type-coverage": "vendor/bin/pest --type-coverage"
+  },
+  "autoload": {
+    "psr-4": {
+      "WillVincent\\EmailVerifier\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WillVincent\\EmailVerifier\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "WillVincent\\EmailVerifier\\EmailVerifierServiceProvider"
+      ],
+      "aliases": {
+        "EmailVerifier": "WillVincent\\EmailVerifier\\Facades\\EmailVerifier"
+      }
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}

@@ -1,0 +1,10 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+parameters:
+    level: 9
+    paths:
+        - src
+    ignoreErrors:
+        # Allow env() calls in package config files
+        - identifier: larastan.noEnvCallsOutsideOfConfig
+          path: config/email-verifier.php

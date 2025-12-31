@@ -1,0 +1,47 @@
+# Composer
+/vendor/
+composer.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+.buildpath
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# PHP
+.phpunit.result.cache
+.php_cs.cache
+.php-cs-fixer.cache
+
+# Test Coverage
+/coverage/
+/.phpunit.cache/
+coverage.xml
+clover.xml
+junit.xml
+
+# Environment
+.env
+.env.backup
+.env.testing
+
+# Build
+/build/
+/dist/
+
+# Logs
+*.log
+
