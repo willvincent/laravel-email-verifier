@@ -21,6 +21,11 @@ final class ExternalEmailVerifierManager extends Manager
         return $driver;
     }
 
+    protected function createAbstractDriver(): ExternalEmailVerifier
+    {
+        return $this->container->make(AbstractEmailVerifier::class);
+    }
+
     protected function createBouncerDriver(): ExternalEmailVerifier
     {
         return $this->container->make(BouncerEmailVerifier::class);
@@ -54,5 +59,10 @@ final class ExternalEmailVerifierManager extends Manager
     protected function createZerobounceDriver(): ExternalEmailVerifier
     {
         return $this->container->make(ZeroBounceEmailVerifier::class);
+    }
+
+    protected function createQuickemailverificationDriver(): ExternalEmailVerifier
+    {
+        return $this->container->make(QuickemailverificationEmailVerifier::class);
     }
 }

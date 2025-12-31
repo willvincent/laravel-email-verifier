@@ -156,8 +156,9 @@ return [
     | providers offer advanced verification including SMTP testing, catch-all
     | detection, and reputation scoring. Set 'driver' to enable.
     |
-    | Supported drivers: 'bouncer', 'emailable', 'kickbox', 'neverbounce',
-    | 'verifiedemail', 'zerobounce', or null
+    | Supported drivers: 'abstract', 'bouncer', 'emailable', 'kickbox',
+    | 'neverbounce', 'quickemailverification', 'verifiedemail', 'zerobounce',
+    | or null
     |
     */
 
@@ -167,6 +168,17 @@ return [
 
         // Timeout in seconds for external API calls
         'timeout_seconds' => env('EMAIL_VERIFIER_TIMEOUT', 5),
+
+        /*
+        |----------------------------------------------------------------------
+        | Abstract Configuration
+        | https://abstractapi.com
+        |----------------------------------------------------------------------
+        */
+        'abstract' => [
+            'api_key' => env('ABSTRACT_API_KEY'),
+            'endpoint' => env('ABSTRACT_ENDPOINT', 'https://emailvalidation.abstractapi.com/v1'),
+        ],
 
         /*
         |----------------------------------------------------------------------
@@ -210,6 +222,17 @@ return [
         'neverbounce' => [
             'api_key' => env('NEVERBOUNCE_API_KEY'),
             'endpoint' => env('NEVERBOUNCE_ENDPOINT', 'https://api.neverbounce.com/v4/single/check'),
+        ],
+        
+        /*
+        |----------------------------------------------------------------------
+        | QuickEmailVerification Configuration
+        | https://quickemailverification.com
+        |----------------------------------------------------------------------
+        */
+        'quickemailverification' => [
+            'api_key' => env('QUICKEMAILVERIFICATION_API_KEY'),
+            'endpoint' => env('QUICKEMAILVERIFICATION_ENDPOINT', 'https://api.quickemailverification.com/v1/verify'),
         ],
 
         /*

@@ -2,12 +2,14 @@
 
 declare(strict_types=1);
 
+use WillVincent\EmailVerifier\External\AbstractEmailVerifier;
 use WillVincent\EmailVerifier\External\BouncerEmailVerifier;
 use WillVincent\EmailVerifier\External\EmailableEmailVerifier;
 use WillVincent\EmailVerifier\External\ExternalEmailVerifierManager;
 use WillVincent\EmailVerifier\External\KickboxEmailVerifier;
 use WillVincent\EmailVerifier\External\NeverBounceEmailVerifier;
 use WillVincent\EmailVerifier\External\NullExternalEmailVerifier;
+use WillVincent\EmailVerifier\External\QuickemailverificationEmailVerifier;
 use WillVincent\EmailVerifier\External\VerifiedEmailVerifier;
 use WillVincent\EmailVerifier\External\ZeroBounceEmailVerifier;
 
@@ -27,6 +29,15 @@ it('returns null driver when config is null', function (): void {
     $driver = $manager->driver();
 
     expect($driver)->toBeInstanceOf(NullExternalEmailVerifier::class);
+});
+
+it('creates abstract driver', function (): void {
+    config()->set('email-verifier.external.driver', 'abstract');
+
+    $manager = resolve(ExternalEmailVerifierManager::class);
+    $driver = $manager->driver('abstract');
+
+    expect($driver)->toBeInstanceOf(AbstractEmailVerifier::class);
 });
 
 it('creates bouncer driver', function (): void {
@@ -63,6 +74,15 @@ it('creates neverbounce driver', function (): void {
     $driver = $manager->driver('neverbounce');
 
     expect($driver)->toBeInstanceOf(NeverBounceEmailVerifier::class);
+});
+
+it('creates quickemailverification driver', function (): void {
+    config()->set('email-verifier.external.driver', 'quickemailverification');
+
+    $manager = resolve(ExternalEmailVerifierManager::class);
+    $driver = $manager->driver('quickemailverification');
+
+    expect($driver)->toBeInstanceOf(QuickemailverificationEmailVerifier::class);
 });
 
 it('creates verifiedemail driver', function (): void {

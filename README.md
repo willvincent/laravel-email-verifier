@@ -13,11 +13,13 @@ A comprehensive email verification package for Laravel 11/12 that validates emai
 
 - **Multi-layered Validation**: Format, domain sanity, MX records, disposable domains, role-based addresses, plus addressing
 - **Score-based System**: Each email receives a quality score (0-100) based on multiple checks
-- **External Provider Support**: Optional integration with 6 major email verification APIs
+- **External Provider Support**: Optional integration with 8 major email verification APIs
+  - <a href="https://abstractapi.com" target="_blank" rel="noopener">Abstract API</a>
   - <a href="https://usebouncer.com" target="_blank" rel="noopener">Bouncer</a>
   - <a href="https://emailable.com" target="_blank" rel="noopener">Emailable</a>
   - <a href="https://kickbox.io" target="_blank" rel="noopener">Kickbox</a>
   - <a href="https://neverbounce.com" target="_blank" rel="noopener">NeverBounce</a>
+  - <a href="https://quickemailverification.com" target="_blank" rel="noopener">QuickEmailVerification</a>
   - <a href="https://verified.email" target="_blank" rel="noopener">VerifiedEmail</a>
   - <a href="https://zerobounce.com" target="_blank" rel="noopener">ZeroBounce</a>
 - **Fail-Open Design**: External provider failures don't block email validation
@@ -79,7 +81,7 @@ return [
 
     // External verification provider
     'external' => [
-        'driver' => env('EMAIL_VERIFIER_EXTERNAL_DRIVER'), // bouncer, emailable, kickbox, neverbounce, verifiedemail, zerobounce
+        'driver' => env('EMAIL_VERIFIER_EXTERNAL_DRIVER'), // abstract, bouncer, emailable, kickbox, neverbounce, quickemailverification, verifiedemail, zerobounce
         'timeout_seconds' => 5,
 
         'bouncer' => [
@@ -196,6 +198,10 @@ KICKBOX_API_KEY=your_api_key_here
 All providers follow the same pattern:
 
 ```env
+# Abstract
+EMAIL_VERIFIER_EXTERNAL_DRIVER=abstract
+ABSTRACT_API_KEY=your_key
+
 # Bouncer
 EMAIL_VERIFIER_EXTERNAL_DRIVER=bouncer
 BOUNCER_API_KEY=your_key
@@ -211,6 +217,10 @@ KICKBOX_API_KEY=your_key
 # NeverBounce
 EMAIL_VERIFIER_EXTERNAL_DRIVER=neverbounce
 NEVERBOUNCE_API_KEY=your_key
+
+# QuickEmailVerification
+EMAIL_VERIFIER_EXTERNAL_DRIVER=quickemailverification
+QUICKEMAILVERIFICATION_API_KEY=your_key
 
 # VerifiedEmail
 EMAIL_VERIFIER_EXTERNAL_DRIVER=verifiedemail
