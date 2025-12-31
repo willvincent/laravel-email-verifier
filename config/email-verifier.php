@@ -223,7 +223,7 @@ return [
             'api_key' => env('NEVERBOUNCE_API_KEY'),
             'endpoint' => env('NEVERBOUNCE_ENDPOINT', 'https://api.neverbounce.com/v4/single/check'),
         ],
-        
+
         /*
         |----------------------------------------------------------------------
         | QuickEmailVerification Configuration
