@@ -1,7 +1,7 @@
 # Laravel Email Verifier
 
 [![Tests](https://img.shields.io/badge/tests-125%20passing-brightgreen)](.)
-[![Coverage](https://img.shields.io/badge/coverage-98.8%25-brightgreen)](.)
+[![Coverage](https://img.shields.io/badge/coverage-99%25-brightgreen)](.)
 [![Type Coverage](https://img.shields.io/badge/type--coverage-100%25-brightgreen)](.)
 [![PHPStan](https://img.shields.io/badge/phpstan-level%209-brightgreen)](.)
 [![GitHub Actions](https://github.com/willvincent/laravel-email-verifier/actions/workflows/tests.yml/badge.svg)](https://github.com/willvincent/laravel-email-verifier/actions/workflows/tests.yml)
