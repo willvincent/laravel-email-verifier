@@ -14,12 +14,12 @@ A comprehensive email verification package for Laravel 11/12 that validates emai
 - **Multi-layered Validation**: Format, domain sanity, MX records, disposable domains, role-based addresses, plus addressing
 - **Score-based System**: Each email receives a quality score (0-100) based on multiple checks
 - **External Provider Support**: Optional integration with 6 major email verification APIs
-  - Bouncer
-  - Emailable
-  - Kickbox
-  - NeverBounce
-  - VerifiedEmail
-  - ZeroBounce
+  - [Bouncer](https://usebouncer.com)
+  - [Emailable](https://emailable.com)
+  - [Kickbox](https://kickbox.io)
+  - [NeverBounce](https://neverbounce.com)
+  - [VerifiedEmail](https://verified.email)
+  - [ZeroBounce](https://zerobounce.com)
 - **Fail-Open Design**: External provider failures don't block email validation
 - **Configurable Rules**: Enable/disable specific validation rules
 - **Laravel Validation Integration**: Use as custom validation rule or extension
